@@ -33,9 +33,9 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     private fun initStateBar() {
-        var option: Int = View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 
         if(Build.VERSION.SDK_INT > 21){
+            var option: Int = View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
             window.decorView.systemUiVisibility = option
             window.navigationBarColor = Color.TRANSPARENT
             window.statusBarColor = Color.TRANSPARENT

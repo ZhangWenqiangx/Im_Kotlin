@@ -45,8 +45,5 @@ class SplashActivity : BaseActivity(), SplashContract.View{
                 startActivity<LoginActivity>()
                     finish()
             }, DELAY)
-
-
     }
-
 }

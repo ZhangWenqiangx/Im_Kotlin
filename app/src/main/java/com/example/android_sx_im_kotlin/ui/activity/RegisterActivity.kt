@@ -1,5 +1,7 @@
 package com.itheima.im.ui.activity
 
+import android.view.KeyEvent
+import android.widget.TextView
 import com.example.android_sx_im_kotlin.R
 import com.example.android_sx_im_kotlin.base.BaseActivity
 import com.example.android_sx_im_kotlin.contract.RegisterContract
@@ -11,6 +13,25 @@ import org.jetbrains.anko.toast
 class RegisterActivity: BaseActivity(),RegisterContract.View{
 
     val presenter = RegisterPresenter(this)
+
+    override fun init() {
+        super.init()
+        register.setOnClickListener{register()}
+        confirmPassword.setOnEditorActionListener(object : TextView.OnEditorActionListener{
+            override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
+                register()
+                return true
+            }
+        })
+    }
+
+    fun register(){
+        hideSoftKeyboard()
+        val userNameString = userName.text.trim().toString()
+        val passwordString = password.text.trim().toString()
+        val confirmPasswordString = confirmPassword.text.trim().toString()
+        presenter.register(userNameString, passwordString, confirmPasswordString)
+    }
 
     override fun getLayoutResId(): Int = R.layout.activity_register
 
@@ -35,9 +56,9 @@ class RegisterActivity: BaseActivity(),RegisterContract.View{
         finish()
     }
 
-    override fun onRegisterFailed() {
+    override fun onRegisterFailed(error: String) {
         dismissProgressDialog()
-        toast(getString(R.string.register_failed))
+        toast(getString(R.string.register_failed).toString()+":"+error)
     }
 
     override fun onUserExist() {

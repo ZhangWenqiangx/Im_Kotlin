@@ -1,6 +1,7 @@
 package com.example.android_sx_chat_kotlin.app
 
 import android.app.Application
+import cn.bmob.v3.Bmob
 import com.hyphenate.chat.BuildConfig
 import com.hyphenate.chat.EMClient
 import com.hyphenate.chat.EMOptions
@@ -15,6 +16,11 @@ class ImApplication : Application() {
         super.onCreate()
 
         initHx()
+        initBmob()
+    }
+
+    private fun initBmob() {
+        Bmob.initialize(this, "e1cf23f46a232a95be6a9a93ed08dfc3")
     }
 
     private fun initHx() {
