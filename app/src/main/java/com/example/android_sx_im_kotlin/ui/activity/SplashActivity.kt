@@ -22,7 +22,7 @@ class SplashActivity : BaseActivity(), SplashContract.View{
      *  val 可见性为private final static，并且val 会生成方法getNormalObject()，通过方法调用访问。
      * */
     companion object {
-        const val DELAY = 2000L                   //定义常量延迟
+         const val DELAY = 2000L                   //定义常量延迟
     }
 
     private val handler by lazy {           //委托懒加载 第一次运行之后不再运行

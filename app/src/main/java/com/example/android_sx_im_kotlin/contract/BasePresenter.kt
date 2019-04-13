@@ -9,7 +9,7 @@ import android.os.Looper
  */
 interface BasePresenter{
 
-    companion object {                              //伴生对象
+    companion object {                              //伴生对象 类似于java中的静态属性
         val handler by lazy {
             Handler(Looper.getMainLooper())         //声明在主线程
         }
@@ -18,4 +18,6 @@ interface BasePresenter{
     fun uiThread(f: () -> Unit){                    //将函数作为形参传入 并在handler中运行
         handler.post{f()}
     }
+
+
 }

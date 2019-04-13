@@ -47,9 +47,9 @@ class RegisterActivity: BaseActivity(),RegisterContract.View{
         confirmPassword.error = getString(R.string.confirm_password_error)
     }
 
-    override fun onStartRegister() {
+    override fun onStartRegister() =
         showProgressDialog(getString(R.string.registering))
-    }
+
 
     override fun onRegisterSuccess() {
         dismissProgressDialog()
@@ -61,9 +61,6 @@ class RegisterActivity: BaseActivity(),RegisterContract.View{
         toast(getString(R.string.register_failed).toString()+":"+error)
     }
 
-    override fun onUserExist() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
+    override fun onUserExist() = toast(R.string.user_already_exist)
 
 }

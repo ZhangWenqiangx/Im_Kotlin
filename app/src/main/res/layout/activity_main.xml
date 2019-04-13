@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android_sx_chat_kotlin.ui.activity.MainActivity">
+    tools:context="com.example.android_sx_im_kotlin.ui.activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/fragment_frame"
@@ -15,12 +15,12 @@
         android:layout_weight="1">
     </FrameLayout>
 
-    <!--<com.roughike.bottombar.BottomBar-->
-        <!--android:id="@+id/bottomBar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="60dp"-->
-        <!--app:bb_tabXmlResource="@xml/bottombar_tabs"-->
-        <!--app:bb_activeTabColor="@color/qq_blue">-->
-    <!--</com.roughike.bottombar.BottomBar>-->
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:bb_tabXmlResource="@xml/bottombar_tabs"
+        app:bb_activeTabColor="@color/qq_blue">
+    </com.roughike.bottombar.BottomBar>
 
 </LinearLayout>
