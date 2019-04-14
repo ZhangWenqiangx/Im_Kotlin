@@ -1,7 +1,5 @@
 package com.example.android_sx_im_kotlin.utils
 
-import com.example.android_sx_im_kotlin.modle.User
-
 /**
  * Created by ZhangWenQiang on 2019/4/12
  * Description: 扩展工具类

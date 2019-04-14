@@ -15,9 +15,7 @@ interface BasePresenter{
         }
     }
 
-    fun uiThread(f: () -> Unit){                    //将函数作为形参传入 并在handler中运行
+    fun uiThread(f: () -> Unit) =                    //将函数作为形参传入 并在handler中运行
         handler.post{f()}
-    }
-
 
 }
