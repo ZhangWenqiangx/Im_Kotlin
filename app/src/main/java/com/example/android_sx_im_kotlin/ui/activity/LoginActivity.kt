@@ -9,7 +9,6 @@ import com.example.android_sx_chat_kotlin.presenter.LoginPresenter
 import com.example.android_sx_im_kotlin.R
 import com.example.android_sx_im_kotlin.base.BaseActivity
 import com.example.android_sx_im_kotlin.contract.LoginContract
-import com.itheima.im.ui.activity.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -40,15 +39,11 @@ class LoginActivity : BaseActivity(),LoginContract.View {
     fun login(){
         hideSoftKeyboard()                      //隐藏软键盘
 
-        if(hasWriteExternalStoragePermission()) {
+        if(hasWriteExternalStoragePermission()) {                               //检测是否有权限 有则登录 无则申请权限
             val userNameString = userName.text.trim().toString()
             val passwordString = password.text.trim().toString()
             presenter.login(userNameString, passwordString)
         } else applyWriteExteranlStoragePermissino()
-
-        var userName = userName.text.trim().toString()                  //拿取控件中的属性
-        var pwd = password.text.trim().toString()
-        presenter.login(userName,pwd)
     }
 
     private fun applyWriteExteranlStoragePermissino() {

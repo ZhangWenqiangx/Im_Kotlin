@@ -5,11 +5,11 @@
         icon="@mipmap/ic_conversation"
         title="@string/message" />
     <tab
-        id="@+id/tab_contacts"
+        id="@+id/tabs_contacts"
         icon="@mipmap/ic_contact"
         title="@string/contact" />
     <tab
-        id="@+id/tab_dynamic"
+        id="@+id/tabs_dynamic"
         icon="@mipmap/ic_dynamic"
         title="@string/dynamic" />
 </tabs>

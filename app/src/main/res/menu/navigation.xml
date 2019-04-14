@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/tab_conversation"
+            android:icon="@mipmap/ic_conversation"
+            android:title="@string/message"/>
+
+    <item
+            android:id="@+id/tabs_contacts"
+            android:icon="@mipmap/ic_contact"
+            android:title="@string/contact"/>
+
+    <item
+            android:id="@+id/tabs_dynamic"
+            android:icon="@mipmap/ic_dynamic"
+            android:title="@string/dynamic"/>
+</menu>

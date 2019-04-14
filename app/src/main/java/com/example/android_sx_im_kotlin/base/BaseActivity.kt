@@ -28,7 +28,7 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutResId())
 
-        initStateBar()
+//        initStateBar()
         init()
     }
 

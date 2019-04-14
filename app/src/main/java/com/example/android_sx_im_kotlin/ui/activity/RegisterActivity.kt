@@ -1,4 +1,4 @@
-package com.itheima.im.ui.activity
+package com.example.android_sx_im_kotlin.ui.activity
 
 import android.view.KeyEvent
 import android.widget.TextView
