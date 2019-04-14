@@ -2,7 +2,6 @@ package com.example.android_sx_im_kotlin.ui.activity
 
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.MenuItem
 import com.example.android_sx_im_kotlin.R
 import com.example.android_sx_im_kotlin.base.BaseActivity

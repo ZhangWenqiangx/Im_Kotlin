@@ -39,6 +39,7 @@ class SplashActivity : BaseActivity(), SplashContract.View{
     override fun checkLoggedIn(boolean: Boolean) {                       //View层实现
         if(boolean) {                                                 //如果已经登录 那么就直接进入主页面
             startActivity<MainActivity>()
+            finish()
         } else {                                                         //如果没有登录 延迟2s跳转登录页面
             ObjectAnimator.ofFloat(logoShow, "alpha", 0f, 1f).setDuration(1500).start()
             handler.postDelayed({
