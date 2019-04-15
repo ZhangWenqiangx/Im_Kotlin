@@ -13,12 +13,24 @@ class MainActivity : BaseActivity() {
 
     override fun init() {
         super.init()
+
+        val defaultFragmen = FragmentFactory.instance.getFragment(R.id.tab_conversation)            //先默认显示conversation
+        supportFragmentManager.beginTransaction().add(R.id.fragment_frame,defaultFragmen!!,"").commit()
+
         bottomNaBar.setOnNavigationItemSelectedListener (object : BottomNavigationView.OnNavigationItemSelectedListener{
             override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+                val transaction = supportFragmentManager.beginTransaction()         //每次切换
 
-                val transaction = supportFragmentManager.beginTransaction()
-                val fragment: Fragment = FragmentFactory.instance.getFragment(p0.itemId)!!
-                transaction.replace(R.id.fragment_frame,fragment)
+                transaction.hide(FragmentFactory.instance.getFragment(R.id.tab_conversation)!!)         //先隐藏所有的fragment
+                transaction.hide(FragmentFactory.instance.getFragment(R.id.tabs_contacts)!!)
+                transaction.hide(FragmentFactory.instance.getFragment(R.id.tabs_dynamic)!!)
+
+                val fragment: Fragment = FragmentFactory.instance.getFragment(p0.itemId)!!              //做判断显示
+
+                if(!fragment.isAdded){
+                    transaction.add(R.id.fragment_frame,fragment,"")
+                }
+                transaction.show(fragment)
                 transaction.commit()
                 return true
             }

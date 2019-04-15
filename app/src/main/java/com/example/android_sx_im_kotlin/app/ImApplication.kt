@@ -12,8 +12,14 @@ import com.hyphenate.chat.EMOptions
  */
 class ImApplication : Application() {
 
+    companion object {
+        lateinit var instence: ImApplication
+    }
+
     override fun onCreate() {
         super.onCreate()
+
+        instence = this
 
         initHx()
         initBmob()

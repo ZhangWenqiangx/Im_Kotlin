@@ -54,8 +54,10 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     fun dismissProgressDialog(){                //进度条消失
-        if(progressDialog.isShowing)
-        progressDialog.hide()
+        if(progressDialog.isShowing){
+            progressDialog.hide()
+            progressDialog.dismiss()
+        }
     }
 
     fun hideSoftKeyboard(){
