@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.view_contact_item.view.*
  * Description:
  */
 class ContactListItemView(context: Context?, attrs: AttributeSet?=null) : RelativeLayout(context, attrs) {
+
     fun bindView(contactListItem: ContactListItem) {
                                                                                     //当数据传来时的初始化
         if(contactListItem.showForstLetter){
