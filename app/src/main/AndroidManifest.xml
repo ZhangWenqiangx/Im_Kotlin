@@ -33,6 +33,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".ui.activity.AddFriendActivity">
+        </activity>
         <activity android:name=".ui.activity.ChatActivity">
         </activity>
         <activity

@@ -19,6 +19,7 @@ class SlideBar(context: Context?, attrs: AttributeSet? = null): View(context, at
     val paint = Paint()
     var sectionHeight = 0f
     var  textBaseLine = 0f
+    var onSectionChangeListener: OnSectionChangeListener?  = null
 
     companion object {
         private val SECTIONS = arrayOf("A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
@@ -56,10 +57,40 @@ class SlideBar(context: Context?, attrs: AttributeSet? = null): View(context, at
     override fun onTouchEvent(event: MotionEvent): Boolean {
 
         when(event.action){
-            MotionEvent.ACTION_DOWN -> setBackgroundResource(R.drawable.bg_slide_bar)
-            MotionEvent.ACTION_UP -> setBackgroundColor(Color.TRANSPARENT)
+            MotionEvent.ACTION_DOWN ->{                                         ///判断按下的事件
+                setBackgroundResource(R.drawable.bg_slide_bar)
+
+                val index = getTouchIndex(event)                          //设置监听抛给外界
+                onSectionChangeListener?.onSectionChange(SECTIONS[index])
+            }
+            MotionEvent.ACTION_MOVE-> {
+                val index = getTouchIndex(event)
+                onSectionChangeListener?.onSectionChange(SECTIONS[index])
+            }
+            MotionEvent.ACTION_UP -> {
+                setBackgroundColor(Color.TRANSPARENT)
+                onSectionChangeListener?.onSlideFinish()
+            }
         }
 
         return true
+    }
+
+    private fun getTouchIndex(event: MotionEvent):Int {
+
+        var index = (event.y / sectionHeight).toInt()
+
+        if(index<0){                            //越界判断
+            index = 0
+        }else if(index >= SECTIONS.size){
+            index = SECTIONS.size-1
+        }
+
+        return index
+    }
+
+    interface OnSectionChangeListener{
+        fun onSectionChange(firstLetter: String)
+        fun onSlideFinish()                 //滑动结束的回调
     }
 }
