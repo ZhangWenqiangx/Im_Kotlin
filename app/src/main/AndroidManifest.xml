@@ -46,9 +46,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.LoginActivity"/>
-        <activity android:name=".ui.activity.RegisterActivity"/>
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".ui.activity.LoginActivity" android:launchMode="singleTask"/>
+        <activity android:name=".ui.activity.RegisterActivity"  />
+        <activity android:name=".ui.activity.MainActivity" android:launchMode="singleTask">
         </activity> <!-- 设置环信应用的AppKey -->
         <meta-data
                 android:name="EASEMOB_APPKEY"

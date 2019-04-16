@@ -19,13 +19,13 @@ class DatabaseHelper(ctx: Context = ImApplication.instence) :
     }
 
     override fun onCreate(p0: SQLiteDatabase?) {
-        val create_sql = "CREATE TABLE IF NOT EXITSTS ${ContactTable.NAME}("+
+        val createSql = "CREATE TABLE IF NOT EXISTS ${ContactTable.NAME}("+
                 "_id INTEGER PRIMARY_KEY AUTOINCREMENT NOT NULL,"+
                 "name VARCHAR NOT NULL);"
 //        p0?.createTable(ContactTable.NAME, true,
 //            ContactTable.ID to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
 //            ContactTable.CONTACT to TEXT)
-        p0!!.execSQL(create_sql)
+        p0!!.execSQL(createSql)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
