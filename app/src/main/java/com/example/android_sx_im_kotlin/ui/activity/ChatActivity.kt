@@ -5,10 +5,12 @@ import android.text.TextWatcher
 import android.view.View
 import com.example.android_sx_im_kotlin.R
 import com.example.android_sx_im_kotlin.base.BaseActivity
+import com.example.android_sx_im_kotlin.contract.ChatContact
 import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.header.*
+import org.jetbrains.anko.toast
 
-class ChatActivity : BaseActivity() {
+class ChatActivity: BaseActivity(),ChatContact.View {
 
     lateinit var username: String
 
@@ -50,6 +52,22 @@ class ChatActivity : BaseActivity() {
         edit.setOnEditorActionListener { p0, p1, p2 ->
 //            send()
             true
+        }
+    }
+
+    override fun onStartSendMessage() {
+        //通知recyclerview刷新列表
+        recyclerView.adapter?.notifyDataSetChanged()
+    }
+
+    override fun onSendMessageState(isSuccess: Boolean) {
+        if(isSuccess){
+            recyclerView.adapter?.notifyDataSetChanged()
+            toast(R.string.send_message_success)
+            edit.text.clear()
+        }else{
+            toast(R.string.send_message_failed)
+            recyclerView.adapter?.notifyDataSetChanged()
         }
     }
 }
