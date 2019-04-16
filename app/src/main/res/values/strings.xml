@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">IM</string>
+    <string name="app_name">IMChat_Kotlin</string>
     <string name="user_name_error" tools:ignore="ExtraTranslation">用户名不合法，3到20位，首字母必须是英文字符</string>
     <string name="password_error">密码不合法，3到20位数字</string>
     <string name="confirm_password_error" tools:ignore="ExtraTranslation">密码和确认密码不一致</string>

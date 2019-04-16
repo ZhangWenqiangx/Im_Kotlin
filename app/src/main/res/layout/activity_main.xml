@@ -18,8 +18,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#E6E4DA"
-        />
+        android:background="#E6E4DA"/>
 
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottomNaBar"

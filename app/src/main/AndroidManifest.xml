@@ -35,7 +35,8 @@
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".ui.activity.AddFriendActivity">
         </activity>
-        <activity android:name=".ui.activity.ChatActivity">
+        <activity android:name=".ui.activity.ChatActivity"
+        android:parentActivityName=".ui.activity.MainActivity">
         </activity>
         <activity
                 android:name=".ui.activity.SplashActivity"

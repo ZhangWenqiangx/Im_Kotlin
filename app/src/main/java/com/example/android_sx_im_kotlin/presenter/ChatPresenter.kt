@@ -51,12 +51,12 @@ class ChatPresenter(val view: ChatContact.View): ChatContact.Presenter{
                 view.onMoreMessageLoad(newMessages.size)
             }
         }
-
     }
 
     override fun loadMessage(username: String) {
         doAsync {
             val conversatoin = EMClient.getInstance().chatManager().getConversation(username)
+            conversatoin.markAllMessagesAsRead()
             messages.addAll(conversatoin.allMessages)
             uiThread {
                 view.onLoadAllConversation()

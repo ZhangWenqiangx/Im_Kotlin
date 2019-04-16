@@ -4,8 +4,10 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import com.example.android_sx_im_kotlin.ui.activity.ChatActivity
 import com.example.android_sx_im_kotlin.widget.ConversationListItemView
 import com.hyphenate.chat.EMConversation
+import org.jetbrains.anko.startActivity
 
 /**
  * Created by ZhangWenQiang on 2019/4/16
@@ -22,8 +24,12 @@ class ConversationListAdapter(
 
     override fun getItemCount(): Int = conversations.size
 
-    override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
-
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val itemView = holder.itemView as ConversationListItemView
+        itemView.bindView(conversations[position])
+        itemView.setOnClickListener {
+            context.startActivity<ChatActivity>("username" to conversations[position].conversationId())
+        }
     }
 
     class ConversationListItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
