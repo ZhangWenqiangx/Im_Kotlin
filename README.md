@@ -5,7 +5,7 @@
 ***
 # 登录页面>  
 
-！[image](https://github.com/1031900805/Android_Sx_Im_Kotlin/blob/master/screenshots/login.png)  
+![image](https://github.com/1031900805/Android_Sx_Im_Kotlin/blob/master/screenshots/login.png)  
 
 # 添加好友>  
 
