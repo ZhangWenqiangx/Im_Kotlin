@@ -14,7 +14,7 @@ import com.itheima.im.adapter.EMMessageListenerAdapter
 
 /**
  * Created by ZhangWenQiang on 2019/4/12
- * Description:
+ * Description:this is main demo of main
  */
 class ImApplication : Application() {
 
